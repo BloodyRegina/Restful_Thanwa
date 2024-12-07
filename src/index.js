@@ -9,6 +9,7 @@ const bodyParser = require('body-parser')
 const cors = require('cors')
 const productRoute = require('./routes/product.route')
 const customersRoute = require('./routes/customer.route');
+const categoriesRoute = require('./routes/category.route');
 // CORS cross origin resource sharing
 app.use(cors())
 app.use(bodyParser.json())
@@ -23,6 +24,7 @@ app.get("/", (req, res) =>{
 
 app.use("/products", productRoute)
 app.use("/customers",customersRoute);
+app.use("/categories", categoriesRoute);
 app.listen(port, () => {
     console.log("App started at port: " + port)
 })
